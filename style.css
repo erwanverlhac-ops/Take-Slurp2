@@ -1,0 +1,158 @@
+:root {
+    /* Palette extraite du PPT */
+    --ppt-green: #38761D;    /* Bouton "Frais généraux" / Logo */
+    --ppt-orange: #E69138;   /* Bouton "R&D" */
+    --ppt-red: #CC0000;      /* Bouton "Lancement" / Tomate */
+    --ppt-yellow: #F1C232;   /* Bouton "Total" */
+    --ppt-cream: #FFFBF0;    /* Fond clair chaleureux */
+    
+    /* Dégradé de fond (Slide Macro-planning) */
+    --gradient-tomato: linear-gradient(135deg, #E74C3C 0%, #F39C12 100%);
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: var(--ppt-cream);
+}
+
+/* Header impactant style "Slide d'intro" */
+.slide-header {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1599525567781-a6750030099b?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.glass-panel {
+    background: rgba(0, 0, 0, 0.6); /* Fond sombre pour lisibilité */
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+}
+
+.logo-text {
+    font-size: 4rem;
+    margin: 0;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 0px var(--ppt-green); /* Contour vert comme le logo */
+}
+
+.highlight { color: var(--ppt-green); }
+
+/* Sections générales */
+section { padding: 4rem 2rem; }
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    color: var(--ppt-green);
+}
+
+/* Section "Problème" */
+.white-bg { background: white; }
+.content-wrapper { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 40px; 
+    max-width: 1000px; 
+    margin: auto; 
+}
+.big-number {
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--ppt-red);
+    display: block;
+    line-height: 1;
+}
+
+/* Section "Solution" avec fond dégradé Tomate */
+.gradient-bg { background: var(--gradient-tomato); }
+.white-text { color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px; /* Arrondi comme les boutons PPT */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 10px solid transparent;
+}
+
+.card-green { border-color: var(--ppt-green); }
+.card-orange { border-color: var(--ppt-orange); }
+.card-red { border-color: var(--ppt-red); }
+
+/* KPI & Budget */
+.kpi-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+}
+
+.gauge-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 8px solid var(--ppt-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--ppt-green);
+    margin: 0 auto 10px auto;
+}
+
+.total-button {
+    background: var(--ppt-yellow);
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 900;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(241, 194, 50, 0.4);
+}
+.budget-summary { text-align: center; }
+
+/* Équipe */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.member {
+    background: var(--ppt-green);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
