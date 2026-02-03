@@ -1,12 +1,10 @@
 :root {
     /* Palette extraite du PPT */
-    --ppt-green: #38761D;    /* Bouton "Frais généraux" / Logo */
-    --ppt-orange: #E69138;   /* Bouton "R&D" */
-    --ppt-red: #CC0000;      /* Bouton "Lancement" / Tomate */
-    --ppt-yellow: #F1C232;   /* Bouton "Total" */
-    --ppt-cream: #FFFBF0;    /* Fond clair chaleureux */
-    
-    /* Dégradé de fond (Slide Macro-planning) */
+    --ppt-green: #38761D;    
+    --ppt-orange: #E69138;   
+    --ppt-red: #CC0000;      
+    --ppt-yellow: #F1C232;   
+    --ppt-cream: #FFFBF0;    
     --gradient-tomato: linear-gradient(135deg, #E74C3C 0%, #F39C12 100%);
 }
 
@@ -17,142 +15,78 @@ body {
     background-color: var(--ppt-cream);
 }
 
-/* Header impactant style "Slide d'intro" */
+/* NAVIGATION */
+.main-nav { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+.main-nav ul { display: flex; justify-content: center; list-style: none; padding: 1rem; margin: 0; }
+.main-nav a { text-decoration: none; color: #333; font-weight: 700; margin: 0 20px; text-transform: uppercase; font-size: 0.9rem; }
+.main-nav a:hover, .main-nav a.active { color: var(--ppt-green); border-bottom: 2px solid var(--ppt-green); }
+
+/* Header impactant */
 .slide-header {
     height: 90vh;
     background: url('https://images.unsplash.com/photo-1599525567781-a6750030099b?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
 }
-
 .glass-panel {
-    background: rgba(0, 0, 0, 0.6); /* Fond sombre pour lisibilité */
-    padding: 3rem;
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    max-width: 800px;
+    background: rgba(0, 0, 0, 0.6); padding: 3rem; border-radius: 20px; backdrop-filter: blur(5px); max-width: 800px;
 }
-
-.logo-text {
-    font-size: 4rem;
-    margin: 0;
-    font-weight: 900;
-    color: white;
-    text-shadow: 2px 2px 0px var(--ppt-green); /* Contour vert comme le logo */
-}
-
+.logo-text { font-size: 4rem; margin: 0; font-weight: 900; color: white; text-shadow: 2px 2px 0px var(--ppt-green); }
 .highlight { color: var(--ppt-green); }
+
+/* En-têtes pages internes */
+.page-header { padding: 4rem 2rem; text-align: center; color: white; }
+.header-orange { background: var(--ppt-orange); }
+.header-green { background: var(--ppt-green); }
+.page-header h1 { font-size: 3rem; margin: 0; text-transform: uppercase; }
+.highlight-yellow { color: var(--ppt-yellow); font-weight: 900; font-size: 1.5em; }
 
 /* Sections générales */
 section { padding: 4rem 2rem; }
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    color: var(--ppt-green);
-}
-
-/* Section "Problème" */
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; text-transform: uppercase; color: var(--ppt-green); }
 .white-bg { background: white; }
-.content-wrapper { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 40px; 
-    max-width: 1000px; 
-    margin: auto; 
-}
-.big-number {
-    font-size: 6rem;
-    font-weight: 900;
-    color: var(--ppt-red);
-    display: block;
-    line-height: 1;
-}
-
-/* Section "Solution" avec fond dégradé Tomate */
 .gradient-bg { background: var(--gradient-tomato); }
 .white-text { color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
 
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: auto;
-}
+/* Section Constat */
+.content-wrapper { display: flex; align-items: center; justify-content: center; gap: 40px; max-width: 1000px; margin: auto; }
+.big-number { font-size: 6rem; font-weight: 900; color: var(--ppt-red); display: block; line-height: 1; }
 
-.card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px; /* Arrondi comme les boutons PPT */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    text-align: center;
-    border-top: 10px solid transparent;
-}
-
+/* Cartes Solution */
+.cards-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: auto; }
+.card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); text-align: center; border-top: 10px solid transparent; }
 .card-green { border-color: var(--ppt-green); }
 .card-orange { border-color: var(--ppt-orange); }
 .card-red { border-color: var(--ppt-red); }
 
-/* KPI & Budget */
-.kpi-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto 4rem auto;
-}
+/* KPI */
+.kpi-grid { display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 900px; margin: 0 auto 4rem auto; }
+.kpi-item { text-align: center; }
+.gauge-circle { width: 120px; height: 120px; border-radius: 50%; border: 8px solid var(--ppt-green); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: var(--ppt-green); margin: 0 auto 10px auto; }
 
-.gauge-circle {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 8px solid var(--ppt-green);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--ppt-green);
-    margin: 0 auto 10px auto;
-}
+/* Bouton CTA */
+.cta-button { display: inline-block; background: var(--ppt-green); color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: transform 0.2s; }
+.cta-button:hover { transform: scale(1.05); background: #2b5c15; }
 
-.total-button {
-    background: var(--ppt-yellow);
-    color: #333;
-    font-size: 2.5rem;
-    font-weight: 900;
-    padding: 1rem 3rem;
-    border-radius: 50px;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(241, 194, 50, 0.4);
-}
-.budget-summary { text-align: center; }
+/* TIMELINE (Rétroplanning) */
+.timeline { position: relative; max-width: 800px; margin: auto; padding: 20px 0; }
+.timeline-item { margin-bottom: 30px; display: flex; gap: 20px; align-items: flex-start; }
+.timeline-date { min-width: 120px; font-weight: 900; color: #555; text-align: right; padding-top: 5px; }
+.timeline-content { flex-grow: 1; background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 5px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.border-orange { border-color: var(--ppt-orange); }
+.border-green { border-color: var(--ppt-green); }
+.border-red { border-color: var(--ppt-red); }
+.border-yellow { border-color: var(--ppt-yellow); }
+.task-list { margin: 10px 0 0 0; padding-left: 20px; }
+.task-list li { margin-bottom: 5px; }
 
-/* Équipe */
-.team-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.member {
-    background: var(--ppt-green);
-    color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    width: 150px;
-    text-align: center;
-}
+/* TABLEAU BUDGET */
+.budget-table { width: 100%; max-width: 900px; margin: auto; border-collapse: collapse; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.budget-table th { background: var(--ppt-green); color: white; padding: 15px; text-align: left; }
+.budget-table td { padding: 12px 15px; border-bottom: 1px solid #ddd; }
+.budget-table .amount-col { text-align: right; }
+.budget-table .amount { text-align: right; font-family: monospace; font-size: 1.1rem; }
+.section-row td { background: #eee; font-weight: bold; color: var(--ppt-green); text-transform: uppercase; letter-spacing: 1px; padding-top: 20px; }
+.subtotal-row td { background: #fff; font-weight: bold; border-top: 2px solid #ccc; font-style: italic; }
+.total-row td { background: var(--ppt-red); color: white; font-weight: 900; font-size: 1.5rem; text-transform: uppercase; padding: 20px; }
 
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
+footer { background: #222; color: white; text-align: center; padding: 1rem; }
